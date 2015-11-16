@@ -7199,6 +7199,7 @@ a:active {
   padding: 160px 0 30px;
   background: url('../images/landing-bg-desktop.jpg') #e7eff3 no-repeat;
   background-size: cover;
+  height:800px;
   background-position: left bottom;
   position: relative;
 }
@@ -8695,7 +8696,6 @@ a:active {
   -webkit-transform: skewX(-15deg);
   transform: skewX(-15deg);
   width: 33.33333333%;
-  height:130px;
   border-right: 1px solid #9c9ba8;
   float: left;
   text-align: center;
@@ -8719,6 +8719,8 @@ a:active {
   -ms-transform: skewX(15deg);
   -webkit-transform: skewX(15deg);
   transform: skewX(15deg);
+  text-decoration:none;
+  color:#241C6E;
 }
 
 .landing-cta-col-content: hover{
@@ -8738,9 +8740,13 @@ a:active {
 }
 .m-landing-cta-block .landing-cta-pill-icon {
   margin: 1px 0;
+  margin-right:30px;
+  margin-bottom:5px;
 }
 .m-landing-cta-block .landing-cta-heart-icon {
   margin: 3px 0;
+  margin-bottom:5px;
+  margin-right: 20px;
 }
 @media screen and (max-width: 767px) {
   .m-landing-cta-block .landing-cta-col {
@@ -9425,4 +9431,11 @@ a:active {
 
 h2 {
     margin: 0;
+}
+
+
+/*Sevvel*/
+.efficacy_image{
+	margin-right: 35px;
+    margin-bottom: 5px;
 }
