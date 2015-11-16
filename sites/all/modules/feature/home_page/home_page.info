@@ -1,0 +1,35 @@
+name = Home Page
+description = Home page of Tradjenta
+core = 7.x
+package = Features
+dependencies[] = ckeditor
+dependencies[] = ctools
+dependencies[] = entity
+dependencies[] = features
+dependencies[] = jquery_update
+dependencies[] = menu
+dependencies[] = menu_attributes
+dependencies[] = page_manager
+dependencies[] = panels
+dependencies[] = quicktabs
+features[ckeditor_profile][] = Full
+features[ctools][] = page_manager:pages_default:1
+features[ctools][] = quicktabs:quicktabs:1
+features[features_api][] = api:2
+features[menu_custom][] = main-menu
+features[menu_custom][] = menu-footer-menu
+features[menu_custom][] = menu-secondary-menu
+features[menu_links][] = main-menu_dosing:<front>
+features[menu_links][] = main-menu_efficacy:<front>
+features[menu_links][] = main-menu_resources:<front>
+features[menu_links][] = main-menu_safety-data:<front>
+features[menu_links][] = menu-footer-menu_contact-us:<front>
+features[menu_links][] = menu-footer-menu_privacy-statement://bidocs.boehringer-ingelheim.com/BIWebAccess/ViewServlet.ser?docBase=renetnt&folderPath=/Privacy+Statements/Diabetes++Alliance+Privacy+Statement.htm
+features[menu_links][] = menu-footer-menu_sitemap:<front>
+features[menu_links][] = menu-footer-menu_terms-of-use:http://bidocs.boehringer-ingelheim.com/BIWebAccess/ViewServlet.ser?docBase=renetnt&folderPath=/Privacy+Statements/PC-BDFR-0009-CONS_BI+Terms+of+Use_Alliance.pdf
+features[menu_links][] = menu-secondary-menu_for-patients://www.tradjenta.com
+features[menu_links][] = menu-secondary-menu_important-safety-information:<front>
+features[menu_links][] = menu-secondary-menu_other-medication-options://hcp.jentadueto.com
+features[menu_links][] = menu-secondary-menu_prescribing-information--medication-guide:http://bidocs.boehringer-ingelheim.com/BIWebAccess/ViewServlet.ser?docBase=renetnt&folderPath=/Prescribing+Information/PIs/Tradjenta/Tradjenta.pdf
+features[page_manager_pages][] = home
+features[quicktabs][] = efficacy
