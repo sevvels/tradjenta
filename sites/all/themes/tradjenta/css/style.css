@@ -7198,10 +7198,10 @@ a:active {
   }
 }
 .l-pageblock-landing {
-  padding: 135px 0 30px;
+  padding: 150px 0 30px;
   background: url('../images/landing-bg-desktop.jpg') #e7eff3 no-repeat;
   background-size: cover;
-  height:790px;
+  height:810px;
   background-position: left bottom;
   position: relative;
 }
