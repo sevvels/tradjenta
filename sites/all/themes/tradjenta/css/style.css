@@ -3632,6 +3632,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   margin-left: -1px;
 }
 .nav {
+	margin-right:15px;
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
@@ -6708,6 +6709,7 @@ a:active {
 @media screen and (max-width: 767px) {
   .l-header-wrapper .header-bg {
     height: 121px;
+    width:1170px;
   }
 }
 .l-header-wrapper .header-bg.faded {
@@ -7196,10 +7198,10 @@ a:active {
   }
 }
 .l-pageblock-landing {
-  padding: 160px 0 30px;
+  padding: 135px 0 30px;
   background: url('../images/landing-bg-desktop.jpg') #e7eff3 no-repeat;
   background-size: cover;
-  height:800px;
+  height:790px;
   background-position: left bottom;
   position: relative;
 }
@@ -7212,7 +7214,7 @@ a:active {
   }
 }
 .l-pageblock-efficacy {
-  padding: 60px 0 50px;
+  padding: 110px 0 50px;
   background: url('../images/efficacy-bg-desktop.jpg') #cfe0ec no-repeat;
   background-size: cover;
   background-position: center top;
@@ -7225,7 +7227,7 @@ a:active {
   }
 }
 .l-pageblock-safety {
-  padding: 60px 0 50px;
+  padding: 60px 0 0px;
   background: url('../images/safety-bg-desktop.jpg') #d8e7f2 no-repeat;
   background-size: cover;
   background-position: center top;
@@ -9420,7 +9422,7 @@ a:active {
   .m-lou {
     left: calc(50% - 435px);
     width: 870px;
-    margin-top: 60px;
+    margin-top: 65px;
   }
 }
 @media (min-width: 768px) {
@@ -9439,3 +9441,18 @@ h2 {
 	margin-right: 35px;
     margin-bottom: 5px;
 }
+
+.selector{
+	height:50px;
+}
+
+.header{
+	width:1140px;
+	margin:auto;
+}
+
+.col-xs-12{
+	width:1170px;
+	margin:auto;
+}
+

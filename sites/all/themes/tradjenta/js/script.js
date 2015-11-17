@@ -211,7 +211,7 @@ var nav = {
             }
             return true;
           });
-        }, 100);
+        }, 1000);
       }
     }
     if (window.location.pathname.indexOf('resources/glucose-conversion') > 0 || window.location.pathname.indexOf('resources/asa-easd') > 0) {
@@ -303,7 +303,7 @@ var nav = {
   scrollTo: function(selector, time, offset) {
 
     var that = this;
-    var time = time === undefined ? 1000 : time;
+    var time = time === undefined ? 2000 : time;
 
       offset = (offset === undefined ? nav.getHeaderHeight() : offset);
 
@@ -381,7 +381,7 @@ var nav = {
       clearTimeout(nav.hasTimeOut);
       nav.hasTimeOut = setTimeout(function() {
         $(".l-header-wrapper").addClass("active");
-      }, 500);
+      }, 100);
     }
     nav.scrollFromLink = false;
   },
@@ -461,3 +461,21 @@ popup.init();
 };
 
 })(jQuery);
+
+
+$(document).ready(function(){
+			  $('a[href*=#]').click(function() {
+				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+				&& location.hostname == this.hostname) {
+				  var $target = $(this.hash);
+				  $target = $target.length && $target
+				  || $('[name=' + this.hash.slice(1) +']');
+				  if ($target.length) {
+					var targetOffset = $target.offset().top;
+					$('html,body')
+					.animate({scrollTop: targetOffset}, 1000);
+				   return false;
+				  }
+				}
+			  });
+			});
