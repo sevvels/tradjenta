@@ -7214,7 +7214,7 @@ a:active {
   }
 }
 .l-pageblock-efficacy {
-  padding: 110px 0 50px;
+  padding: 60px 0 50px;
   background: url('../images/efficacy-bg-desktop.jpg') #cfe0ec no-repeat;
   background-size: cover;
   background-position: center top;
@@ -7867,7 +7867,7 @@ a:active {
 .m-tab-2-col-cta {
   margin-top: 40px;
 }
-.m-tab-2-col-cta .cta-text {
+.m-tab-2-col-cta .landing-cta-text {
   color: #FFF;
   font-size: 13px;
   line-height: 18px;
@@ -8721,8 +8721,6 @@ a:active {
   -ms-transform: skewX(15deg);
   -webkit-transform: skewX(15deg);
   transform: skewX(15deg);
-  text-decoration:none;
-  color:#241C6E;
 }
 
 .landing-cta-col-content: hover{
@@ -8742,8 +8740,6 @@ a:active {
 }
 .m-landing-cta-block .landing-cta-pill-icon {
   margin: 1px 0;
-  margin-right:30px;
-  margin-bottom:5px;
 }
 .m-landing-cta-block .landing-cta-heart-icon {
   margin: 3px 0;
@@ -8851,11 +8847,9 @@ a:active {
   -webkit-transform: skewX(-12deg);
   transform: skewX(-12deg);
   background: #473f91;
-  color:#fff;
-  text-transform:uppercase;
-  font-size: 17px;
+  font-size: 12px;
   display: block;
-  padding: 10px 0;
+  padding: 13px 0;
   text-align: center;
   font-family: "Titillium", Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -9437,22 +9431,52 @@ h2 {
 
 
 /*Sevvel*/
+/*positioning the images in the home page banner*/
 .efficacy_image{
 	margin-right: 35px;
     margin-bottom: 5px;
 }
 
+
+.landing-cta-pill-icon{
+	margin-right:30px;
+  	margin-bottom:5px;
+}
+
+/*This is to proovide some space above the resources block so that it stands in its positon*/
 .selector{
 	height:50px;
 }
+
+/*Matching the header size with the original website*/
 
 .header{
 	width:1140px;
 	margin:auto;
 }
 
-/*.col-xs-12{
-	width:1170px;
-	margin:auto;
-}*/
+
+/*Removing the underline while hovering the banner texts A1C reductions, etc*/
+.landing-cta-col-content{
+	text-decoration:none;
+	color:#241C6E;
+}
+
+/*This is to make the efficacy tab position correctly by providing some extra space*/
+.l-pageblock-efficacy{
+	padding: 110px 0 50px;
+}
+
+/*To reduce the size of the white text left to the STUDY DESIGNS button of efficacy tab*/
+.m-tab-2-col-cta .landing-cta-text {
+  font-size: 13px;
+}
+
+/* STUDY DESIGNS button style */
+.m-btn-skewed{
+font-size: 17px;
+padding: 10px;
+text-transform: uppercase;
+color: #fff;
+}
 

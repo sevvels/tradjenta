@@ -62,6 +62,7 @@ var isiHelper = {
     });
   },
 
+
   //Attach handler to ISI link in header nav
   attachNavHandler: function(){
     $('.expand-isi').on('click touchstart', function(e){
@@ -460,22 +461,86 @@ popup.init();
   }
 };
 
+/**
+   * Anchor fixes.
+   */
+  var $scrollableElement = $();
+  Drupal.behaviors.bootstrapAnchors = {
+    attach: function(context, settings) {
+      var i, elements = ['html', 'body'];
+      if (!$scrollableElement.length) {
+        for (i = 0; i < elements.length; i++) {
+          var $element = $(elements[i]);
+          if ($element.scrollTop() > 0) {
+            $scrollableElement = $element;
+            break;
+          }
+          else {
+            $element.scrollTop(1);
+            if ($element.scrollTop() > 0) {
+              $element.scrollTop(0);
+              $scrollableElement = $element;
+              break;
+            }
+          }
+        }
+      }
+      if (!settings.bootstrap || !settings.bootstrap.anchorsFix) {
+        return;
+      }
+      var anchors = $(context).find('a').toArray();
+      for (i = 0; i < anchors.length; i++) {
+        if (!anchors[i].scrollTo) {
+          this.bootstrapAnchor(anchors[i]);
+        }
+      }
+      $scrollableElement.once('bootstrap-anchors', function () {
+        $scrollableElement.on('click.bootstrap-anchors', 'a[href*="#"]:not([data-toggle],[data-target])', function(e) {
+          this.scrollTo(e);
+        });
+      });
+    },
+    bootstrapAnchor: function (element) {
+      element.validAnchor = element.nodeName === 'A' && (location.hostname === element.hostname || !element.hostname) && element.hash.replace(/#/,'').length;
+      element.scrollTo = function(event) {
+        var attr = 'id';
+        var $target = $(element.hash);
+        if (!$target.length) {
+          attr = 'name';
+          $target = $('[name="' + element.hash.replace('#', '') + '"');
+        }
+        var offset = $target.offset().top - parseInt($scrollableElement.css('paddingTop'), 10) - parseInt($scrollableElement.css('marginTop'), 10);
+        if (this.validAnchor && $target.length && offset > 0) {
+          if (event) {
+            event.preventDefault();
+          }
+          var $fakeAnchor = $('<div/>')
+            .addClass('element-invisible')
+            .attr(attr, $target.attr(attr))
+            .css({
+              position: 'absolute',
+              top: offset + 'px',
+              zIndex: -1000
+            })
+            .appendTo('body');
+          $target.removeAttr(attr);
+          var complete = function () {
+            location.hash = element.hash;
+            $fakeAnchor.remove();
+            $target.attr(attr, element.hash.replace('#', ''));
+          };
+          if (Drupal.settings.bootstrap.anchorsSmoothScrolling) {
+            $scrollableElement.animate({ scrollTop: offset, avoidTransforms: true }, 1500, complete);
+          }
+          else {
+            $scrollableElement.scrollTop(offset);
+            complete();
+          }
+        }
+      };
+    }
+  };
+
 })(jQuery);
 
 
-$(document).ready(function(){
-			  $('a[href*=#]').click(function() {
-				if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-				&& location.hostname == this.hostname) {
-				  var $target = $(this.hash);
-				  $target = $target.length && $target
-				  || $('[name=' + this.hash.slice(1) +']');
-				  if ($target.length) {
-					var targetOffset = $target.offset().top;
-					$('html,body')
-					.animate({scrollTop: targetOffset}, 1000);
-				   return false;
-				  }
-				}
-			  });
-			});
